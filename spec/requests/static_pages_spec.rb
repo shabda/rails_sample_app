@@ -40,6 +40,20 @@ describe "Static pages" do
      end
    end
 
+   describe "Contact page" do
+
+      it "should have the content 'Contact Us'" do
+        visit '/static_pages/contact'
+        page.should have_content('Contact Us')
+      end
+
+      it "should have contact email" do
+       visit '/static_pages/contact'
+       page.should have_selector("p", :text => "hello@agiliq.com")
+      end
+    end
+
+
    describe "About page" do
 
      it "should have the content 'About Us'" do
